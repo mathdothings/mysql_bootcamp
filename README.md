@@ -1,1 +1,1 @@
-# mysql_bootcamp
+Repo to track my progress during mysql bootcamp.

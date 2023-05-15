@@ -1,0 +1,1 @@
+-- CHAR is a good way to store acronyms like state names, gender, etc.

@@ -1,0 +1,1 @@
+SELECT DATE_FORMAT(NOW(), '%m/%d/%Y');

@@ -1,0 +1,2 @@
+SELECT CURDATE();
+-- YYYY-MM-DD

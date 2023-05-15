@@ -1,0 +1,1 @@
+SELECT DATE_FORMAT(NOW(), '%M %D at %H:%i');

@@ -1,0 +1,5 @@
+-- DATETIME and TIMESTAMP they are both data types to store date into it. 
+-- The difference between then is the size of stored data. 
+-- DATATIME has a wide range and a high memory cost to store it. 
+-- TIMESTAMP has a lower range but has also a lower data size, 
+	-- making it better if you need to care about memory.

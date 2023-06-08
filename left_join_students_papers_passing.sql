@@ -2,6 +2,7 @@ SELECT
     students.firstname,
     IFNULL(AVG(papers.grade), 0),
     CASE
+        WHEN AVG(papers.grade) IS NULL THEN 'FAILING'
         WHEN AVG(papers.grade) >= 75 THEN 'PASSING'
         ELSE 'FAILING'
     END AS passing_status

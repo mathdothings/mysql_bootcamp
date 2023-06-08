@@ -1,9 +1,10 @@
 SELECT 
     students.firstname,
     IFNULL(AVG(papers.grade), 0),
-    IF(AVG(papers.grade) >= 75,
-        'PASSING',
-        'FAILING') AS passing_status
+    CASE
+        WHEN AVG(papers.grade) >= 75 THEN 'PASSING'
+        ELSE 'FAILING'
+    END AS passing_status
 FROM
     students
         LEFT JOIN

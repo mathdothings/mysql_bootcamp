@@ -1,14 +1,14 @@
-CREATE TABLE reviewers(
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	firstname VARCHAR(255) NOT NULL,
-	lastname VARCHAR(255) NOT NULL
+CREATE TABLE reviewers (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(255) NOT NULL,
+    lastname VARCHAR(255) NOT NULL
 );
 	
-CREATE TABLE series(
-	id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(255),
-	released YEAR NOT NULL,
-	genre VARCHAR(255) NOT NULL
+CREATE TABLE series (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255),
+    released YEAR NOT NULL,
+    genre VARCHAR(255) NOT NULL
 );
 	
 INSERT INTO series(title, released, genre) VALUES
@@ -37,13 +37,17 @@ INSERT INTO reviewers(firstname, lastname) VALUES
     ('Pinkie', 'Petit'),
     ('Marlon', 'Crafford');
 
-CREATE TABLE ratings(
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	rating DECIMAL(2,1),
-	series_id INT,
-	reviewers_id INT,
-	FOREIGN KEY (series_id) REFERENCES series(id) ON DELETE CASCADE,
-	FOREIGN KEY (reviewers_id) REFERENCES reviewers(id) ON DELETE CASCADE
+CREATE TABLE ratings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    rating DECIMAL(2 , 1 ),
+    series_id INT,
+    reviewers_id INT,
+    FOREIGN KEY (series_id)
+        REFERENCES series (id)
+        ON DELETE CASCADE,
+    FOREIGN KEY (reviewers_id)
+        REFERENCES reviewers (id)
+        ON DELETE CASCADE
 );
     
 INSERT INTO ratings(series_id, reviewers_id, rating) VALUES
